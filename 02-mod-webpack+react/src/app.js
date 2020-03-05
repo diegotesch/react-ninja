@@ -4,7 +4,7 @@ import React from 'react'
 
 const App = React.createClass({
   render: function () {
-    return <h2>Aplicação</h2>
+    return <h2>Aplicação Nova</h2>
   }
 })
 
