@@ -7,7 +7,8 @@ const Square = ({ color }) => (
     background: color,
     height: '100px',
     width: '100px'
-    }} />
+  }}
+  />
 )
 
 Square.defaultProps = {
