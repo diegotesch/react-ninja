@@ -6,7 +6,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      value: 'Valor inicial',
+      value: '2',
       checked: false
     }
   }
@@ -15,41 +15,21 @@ class App extends Component {
     return (
       <div>
         <form>
-          <input
-            type='text'
-            // defaultValue='Valor inicial'
-            value={this.state.value}
-            onChange={(e) => {
+          <select
+            // defaultValue='2'
+            multiple
+            value={['1', '3']}
+            // value={this.state.value}
+            onChange={e => {
               this.setState({
                 value: e.target.value
               })
             }}
-          />
-
-          <label>
-            <input
-              type='checkbox'
-              value='meu-checkbox'
-              // defaultChecked={false}
-              checked={this.state.checked}
-              onChange={e => {
-                this.setState({
-                  checked: e.target.checked
-                })
-              }}
-            />
-            Checkbox
-          </label>
-
-          <input
-            type='radio'
-            name='rd'
-            defaultChecked={true}
-          /> Radio 1
-          <input
-            type='radio'
-            name='rd'
-          /> Radio 2
+          >
+            <option value='1'>Opt 1</option>
+            <option value='2'>Opt 2</option>
+            <option value='3'>Opt 3</option>
+          </select>
         </form>
       </div>
     )
