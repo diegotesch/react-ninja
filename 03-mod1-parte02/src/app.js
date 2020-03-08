@@ -14,16 +14,31 @@ class App extends Component {
   render () {
     return (
       <div>
-        <form>
-          <textarea
-            // defaultValue='textarea value'
-            value={this.state.value}
-            onChange={e => {
-              this.setState({
-                value: e.target.value
-              })
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            console.log('event', e)
+          }}
+          onChange={e => {
+            console.log(`${e.target.name} = ${e.target.value}`)
+          }}
+        >
+          <input
+            type='text'
+            name='nome'
+          />
+          <input
+            type='email'
+            name='email'
+          />
+          <input
+            type='checkbox'
+            onClick={e => {
+              console.log(e.target.value)
             }}
           />
+
+          <button type='submit'>Enviar</button>
         </form>
       </div>
     )
