@@ -6,7 +6,8 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      value: 'Valor inicial'
+      value: 'Valor inicial',
+      checked: false
     }
   }
 
@@ -19,12 +20,36 @@ class App extends Component {
             // defaultValue='Valor inicial'
             value={this.state.value}
             onChange={(e) => {
-              console.log(e.target)
               this.setState({
                 value: e.target.value
               })
             }}
           />
+
+          <label>
+            <input
+              type='checkbox'
+              value='meu-checkbox'
+              // defaultChecked={false}
+              checked={this.state.checked}
+              onChange={e => {
+                this.setState({
+                  checked: e.target.checked
+                })
+              }}
+            />
+            Checkbox
+          </label>
+
+          <input
+            type='radio'
+            name='rd'
+            defaultChecked={true}
+          /> Radio 1
+          <input
+            type='radio'
+            name='rd'
+          /> Radio 2
         </form>
       </div>
     )
